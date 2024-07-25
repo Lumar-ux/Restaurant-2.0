@@ -1,0 +1,316 @@
+// Import Bootstrap's functions and variables
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+// Override Bootstrap variables
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+// Import Bootstrap's remaining styles
+@font-face {
+  font-family: "HelveticaLTStd";
+  src: url("../fonts/HelveticaLTStd/Helvetica-LT-Std-Compressed.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HelveticaLTStd";
+  src: url("../fonts/HelveticaLTStd/Helvetica-LT-Std-Roman.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HelveticaLTStd";
+  src: url("../fonts/HelveticaLTStd/Helvetica-LT-Std-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "HelveticaLTStd", sans-serif;
+}
+body nav {
+  height: 195px;
+}
+body nav .container .row .navbar-nav a {
+  color: #f1ebd9;
+  font-size: 15px;
+}
+nav .navbar-toggler {
+  color: #f1ebd9;
+  border: solid 2px#f1ebd9;
+  margin-right: 20px;
+}
+body .container .row .main-1-images {
+  width: 372px;
+}
+body main {
+  padding-top: 87px;
+}
+main .main-1 {
+  margin-bottom: 75px;
+}
+body .main-gal-1 {
+  margin-bottom: 97px;
+}
+body main .main-gal-1 .row .title_gal {
+  font-weight: 600;
+  height: 68px;
+  margin-bottom: 45px;
+  font-size: 70px;
+  color: #73160e;
+}
+body .main-1 .main-1-para {
+  font-size: 15px;
+  text-align: justify;
+}
+body .img-damier{
+  height: 80px;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+main .main-1 .main-1-logo,
+main .main-1 .main-1-para {
+  margin-bottom: 24px;
+}
+main .main-1 .main-1-images {
+  width: 550px;
+}
+main .main-2 {
+  height: 100%;
+  width: 100%;
+  padding-block: 75px;
+}
+main .main-2 .article_jumbo .titre-Event {
+  font-weight: 600;
+  height: 68px;
+  font-size: 70px;
+  color: #f1ebd9;
+  margin-bottom: 45px;
+}
+main .main-2 .article_jumbo .jumbotron h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #73160e;
+}
+main .main-2 .jumbotron .parag-jumbo p {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: justify;
+}
+.card-text {
+  font-size: 15px;
+  font-weight: normal;
+  color: #f1ebd9;
+}
+.card-title {
+  font-weight: normal;
+  color: #f1ebd9;
+}
+.card-all {
+  margin-bottom: 25px;
+}
+main .main-2 .article-card-1 {
+  margin-top: 50px;
+}
+footer .row .col nav ul {
+  list-style-type: none;
+}
+footer .foot-img {
+  margin-right: 145px;
+  width: 242px;
+}
+footer .row .col nav ul li a {
+  font-weight: bold;
+  font-size: 15px;
+}
+footer .foot-1 h2,
+footer .foot-1colo h2{
+  font-weight: normal;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+footer .foot-1 p,
+footer .foot-1colo p {
+  font-weight: normal;
+  font-size: 12px;
+}
+footer .foot-1colo p,
+footer .foot-1colo h2,
+footer .foot-1colo a {
+  color: #f1ebd9;
+}
+footer .foot-1colo a,
+footer .foot-1 a {
+  text-decoration: none;
+  font-weight: bold;
+}
+footer .foot-1 a,
+footer .foot-1 p,
+footer .foot-1 h2 {
+  color: #73160e;
+}
+main .row .col-10 ul li {
+  list-style-type: none;
+  color: #73160e;
+}
+main .row .col-10 ul .title_list {
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: 24px;
+}
+main .row .col-10 ul li span {
+  margin-left: 7px;
+}
+
+main .main-1 .title-menu,
+main .title-resto-ca {
+  font-weight: 600;
+  font-size: 70px;
+  height: 68px;
+  color: #73160e;
+  margin-bottom: 45px;
+}
+main .main-1 ul li .badge{
+  background-color: #73160e;
+  color: #f1ebd9;
+}
+
+main .carousel-item img {
+  height: 624px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+main .pays-ca {
+  font-weight: 600;
+  color: #73160e;
+  font-size: 43.26px;
+}
+main .resto-ouvert article p,
+main .resto-ouvert article h3 {
+  font-size: 15px;
+}
+main .main-resto .resto-ouvert {
+  margin-bottom: 45px;
+}
+main .resto-ouvert article h3 {
+  font-weight: bold;
+}
+body .main-resto {
+  margin-bottom: 75px;
+}
+body main #cont-contact {
+  margin-bottom: 175px;
+}
+body main .form-floating {
+  background-color: #f1ebd9;
+}
+body main .container .send {
+  background-color: #73160e;
+  color: #f1ebd9;
+  padding-right: 8px;
+}
+body main .container .send img {
+  margin-left: 5px;
+}
+#tab-back td{
+  border:solid 2px#73160E;
+  height: 74px;
+  text-align: center;
+}
+body main aside{
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+#sec-logo-backoffice{
+  width: 145px;
+  // position: absolute;
+  float: left;
+  left: 53px;
+}
+.html-backoffice{
+  height: 100vh;
+}
+body main #tab-back .corner-left_backoffice{
+  border-radius: 12px 0 0 0;
+}
+#tab-back .corner-right_backoffice{
+  border-radius: 0 0 12px 0;
+}
+#tab-back .corner-left-bottom_backoffice{
+  border-radius: 0 12px 0 0;
+}
+#tab-back .corner-right-bottom_backoffice{
+  border-radius: 0 0 0 12px;
+}
+.sidebar {
+  float: left;
+  margin-top: 75px;
+}
+#tab-back {
+  float: right;
+}
+.sidebar a {
+  display: block;
+  padding: 10px;
+  background-color: #f0e6d6;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #800000;
+}
+.sidebar a:hover {
+  background-color: #e6d3b8;
+}
+@media only screen and (max-width: 768px) {
+  main .main-2 .article-card-1 .card {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  body .img-damier {
+    width: 100%;
+    height: 80px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+  }
+  main .article-card-1 .card-all-1 {
+    margin-bottom: 25px;
+  }
+  footer .foot-img {
+    margin-right: 0px;
+    width: 200px; //
+  }
+  footer .foot-1colo nav ul li:nth-child(2),footer .foot-1 nav ul li:nth-child(2){
+    margin-bottom: 24px;
+  }
+  footer .foot-1colo nav,footer .foot-1 nav{
+    margin-bottom: 24px;
+  }
+  main .main-1-images {
+    width: 540px !important;
+    height: 400px;
+    margin-top: 50px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+  }
+  body main {
+    padding-top: 50px;
+  }
+  body .main-1 .main-1-logo {
+    margin-bottom: 50px;
+  }
+}
