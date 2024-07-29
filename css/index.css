@@ -12119,7 +12119,7 @@ body main aside {
 }
 
 #sec-logo-backoffice {
-  width: 135px;
+  width: 145px;
   float: left;
   left: 53px;
 }
@@ -12160,6 +12160,11 @@ body main #tab-back .corner-left_backoffice {
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid #800000;
+}
+
+td .delete_button {
+  background-color: transparent;
+  border: none;
 }
 
 .sidebar a:hover {

@@ -1,6 +1,3 @@
-
-
-<!-- Récupération des donné de la base de donne -->
 <?php
 try{
   $mysqlClient = new PDO('mysql:host=localhost;dbname=db_tavola;charset=utf8','root','', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],);
@@ -28,7 +25,7 @@ catch (Exception $e)
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/index.css" />
-    <title>Backoffice</title>
+    <title>Guest Book</title>
   </head>
   <body style="background-color: #f1ebd9;">
     <main>
@@ -37,15 +34,15 @@ catch (Exception $e)
           <img src="images/logo_tavola_colo_02.svg" alt="logo tavola" class="w-100">
         </section>
         <section class="sidebar">
-          <a href="#">Messages</a>
-          <a href="guestBook.php">Guest book</a>
-          <a href="galery_BackO.php">Gallery</a>
+          <a href="backoffice.php">Messages</a>
+          <a href="#">Guest book</a>
+          <a href="#">Gallery</a>
         </section>
       </aside>
       <section id="cont-contact" class="container px-0">
         <article class="row m-0">
           <div class="col-12 p-0 d-flex justify-content-center">
-            <h1 class="text-uppercase">Back Office</h1>
+            <h1 class="text-uppercase">Guest Book</h1>
           </div>
         </article>
         <article class="row m-0">
@@ -53,10 +50,9 @@ catch (Exception $e)
             <table id="tab-back" class="w-100 border border-2">
               <thead>
                 <td class="corner-left_backoffice">Date</td>
-                <td>FirstName</td>
-                <td>LastName</td>
+                <td>Name</td>
                 <td>Email</td>
-                <td>Objet</td>
+                <td>Visited Resto</td>
                 <td>Message</td>
                 <td class="corner-right_backoffice">Delete</td>
               </thead>

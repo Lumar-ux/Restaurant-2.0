@@ -1,6 +1,3 @@
-
-
-<!-- Récupération des donné de la base de donne -->
 <?php
 try{
   $mysqlClient = new PDO('mysql:host=localhost;dbname=db_tavola;charset=utf8','root','', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION],);
@@ -28,7 +25,7 @@ catch (Exception $e)
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/index.css" />
-    <title>Backoffice</title>
+    <title>Guest Book</title>
   </head>
   <body style="background-color: #f1ebd9;">
     <main>
@@ -37,27 +34,30 @@ catch (Exception $e)
           <img src="images/logo_tavola_colo_02.svg" alt="logo tavola" class="w-100">
         </section>
         <section class="sidebar">
-          <a href="#">Messages</a>
+          <a href="backoffice.php">Messages</a>
           <a href="guestBook.php">Guest book</a>
-          <a href="galery_BackO.php">Gallery</a>
+          <a href="#">Gallery</a>
         </section>
       </aside>
       <section id="cont-contact" class="container px-0">
         <article class="row m-0">
           <div class="col-12 p-0 d-flex justify-content-center">
-            <h1 class="text-uppercase">Back Office</h1>
+            <h1 class="text-uppercase">Guest Book</h1>
           </div>
         </article>
         <article class="row m-0">
           <div class="col px-0">
+            <section>
+                <form action="treatment_galery.php" method="POST" class="d-flex flex-row">
+                  <label for="fileInput" class="button py-2 px-3 rounded-2" style="background-color: #73160e; color: #f1ebd9;">Choose an image</label>
+                  <input type="file" id="fileInput" style="display: none;">
+                  <button type="submit" name="submit" class="py-2 px-3 rounded-2 border-2" style="background-color: #f1ebd9; color: #73160e;">Upload</button>
+                </form>
+            </section>
             <table id="tab-back" class="w-100 border border-2">
               <thead>
                 <td class="corner-left_backoffice">Date</td>
-                <td>FirstName</td>
-                <td>LastName</td>
-                <td>Email</td>
-                <td>Objet</td>
-                <td>Message</td>
+                <td>Name</td>
                 <td class="corner-right_backoffice">Delete</td>
               </thead>
               <tbody>
@@ -70,11 +70,7 @@ catch (Exception $e)
                   
                   <tr>
                     <td name="user_id"><?= $donnee['date1'] ?></td>
-                    <td><?= htmlspecialchars($donnee['firstname'], ENT_QUOTES) ?></td>
-                    <td><?= htmlspecialchars($donnee['lastname'], ENT_QUOTES) ?></td>
-                    <td><?= htmlspecialchars($donnee['email'], ENT_QUOTES) ?></td>
-                    <td><?= htmlspecialchars($donnee['motif'], ENT_QUOTES) ?></td>
-                    <td><?= htmlspecialchars($donnee['message'], ENT_QUOTES) ?></td>
+                    <td><?= htmlspecialchars($donnee['name'], ENT_QUOTES) ?></td>
                     <td>
                       <input type="hidden" name="user_id" value="<?= htmlspecialchars($donnee['user_id'], ENT_QUOTES) ?>"> 
                       <button type="submit" name="submit" class="delete_button bg-transparent border border-0"><img src="images/delete_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="delete_icon"></button>

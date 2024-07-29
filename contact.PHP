@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,36 +45,37 @@
           </div>
         </article>
         <article class="row m-0">
-          <form class="col-12 px-0" action="post" action="backoffice.php">
+          <form class="col-12 px-0" method="POST" action="traitement_form.php">
+            <input type="hidden" name="date1" value="<?php echo $date = (new DateTime())->format('d-m-Y'); ?>">  
             <div class="form-floating mb-3 no-radius">
-              <input type="firstname" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <input type="firstname" name="firstname" class="form-control" id="floatingInput" placeholder="name@example.com">
               <label for="floatingInput">Prénom</label>
             </div>
             <div class="form-floating mb-3 no-radius">
-              <input type="name" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="lastname" name="lastname" class="form-control" id="floatingPassword" placeholder="Password">
               <label for="floatingInput">Nom</label>
             </div>
             <div class="form-floating mb-3 no-radius">
-              <input type="email" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="email" name="email"  class="form-control" id="floatingPassword" placeholder="Password">
               <label for="floatingInput">Adresse email</label>
             </div>
             <div class="form-floating mb-3">
               <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="obj">
                 <option selected>Choisissez une option parmi celles-ci:</option>
-                <option value="msg" name="msg">Laisser un message dans le livre d'or</option>
-                <option value="1" name="reser">Demande de réservation (date, heure, nombre de personnes)</option>
-                <option value="2" name="privat">Demande d'informations sur les événements privés</option>
-                <option value="3" name="grp-reser">Réservation pour un groupe</option>
-                <option value="4" name="QA">Questions sur les ingrédients ou les allergènes</option>
-                <option value="5" name="opt-vege">Demande d'informations sur les options végétariennes/véganes</option>
-                <option value="6" name="livraison">Commande à emporter/livraison</option>
-                <option value="7" name="mod-command">Demande de modification de commande</option>
-                <option value="8" name="issues">Problème avec une commande passée</option>
+                <option name="msg">Laisser un message dans le livre d'or</option>
+                <option name="reser">Demande de réservation (date, heure, nombre de personnes)</option>
+                <option name="privat">Demande d'informations sur les événements privés</option>
+                <option name="grp-reser">Réservation pour un groupe</option>
+                <option name="QA">Questions sur les ingrédients ou les allergènes</option>
+                <option name="opt-vege">Demande d'informations sur les options végétariennes/véganes</option>
+                <option name="livraison">Commande à emporter/livraison</option>
+                <option name="mod-command">Demande de modification de commande</option>
+                <option name="issues">Problème avec une commande passée</option>
               </select>
               <label for="floatingSelect">Object</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px" name="message"></textarea>
               <label for="floatingTextarea2">Comments</label>
             </div>
             <button type="submit" name="submit" class="send btn d-flex">Envoyé<img src="images/send_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="send-icon"></button>
