@@ -2,6 +2,8 @@
 
 J'ai repris mon projet de site web de restaurant et l'ai amélioré en ajoutant de nouvelles fonctionnalités et en peaufinant le design.
 
+***Note : Ce projet est actuellement en phase de développement.***
+
 ## Objectifs
 
 - **Implémenter un back-office :** Permettre à l'équipe marketing et communication de gérer les messages de contact de manière centralisée.
