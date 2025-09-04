@@ -8,10 +8,19 @@ catch (Exception $e)
 }
 ?>
 <?php 
-  $sqlQuerry = 'SELECT * FROM users';
+  // Ensure the gallery table exists and fetch records
+  $mysqlClient->exec(
+    "CREATE TABLE IF NOT EXISTS gallery (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      date1 DATETIME NOT NULL,
+      name VARCHAR(255) NOT NULL,
+      filename VARCHAR(255) NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"
+  );
+  $sqlQuerry = 'SELECT id, date1, name, filename FROM gallery ORDER BY date1 DESC, id DESC';
   $tavolaStatement = $mysqlClient->prepare($sqlQuerry);
   $tavolaStatement->execute();
-  $tavola = $tavolaStatement->fetchAll();
+  $tavola = $tavolaStatement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en" class="html-backoffice">
@@ -48,9 +57,11 @@ catch (Exception $e)
         <article class="row m-0">
           <div class="col px-0">
             <section>
-                <form action="treatment_galery.php" method="POST" class="d-flex flex-row">
+                <form action="treatment_galery.php" method="POST" enctype="multipart/form-data" class="d-flex flex-row align-items-center gap-2">
                   <label for="fileInput" class="button py-2 px-3 rounded-2" style="background-color: #73160e; color: #f1ebd9;">Choose an image</label>
-                  <input type="file" id="fileInput" style="display: none;">
+                  <input type="file" id="fileInput" name="image" accept="image/*" style="display: none;">
+                  <input type="hidden" name="date1" value="<?= (new DateTime())->format('Y-m-d H:i:s'); ?>">
+                  <input type="text" name="name" placeholder="Name (optional)" class="form-control" style="max-width: 240px;">
                   <button type="submit" name="submit" class="py-2 px-3 rounded-2 border-2" style="background-color: #f1ebd9; color: #73160e;">Upload</button>
                 </form>
             </section>
@@ -58,10 +69,11 @@ catch (Exception $e)
               <thead>
                 <td class="corner-left_backoffice">Date</td>
                 <td>Name</td>
+                <td>Preview</td>
                 <td class="corner-right_backoffice">Delete</td>
               </thead>
               <tbody>
-              <form action="delete_data.php" method="POST">
+              <form action="treatment_galery.php" method="POST">
                 <?php 
                 $setDate = new DateTime();
                 $date = $setDate->format('Y-m-d H:i:s');
@@ -69,11 +81,17 @@ catch (Exception $e)
                   ?>
                   
                   <tr>
-                    <td name="user_id"><?= $donnee['date1'] ?></td>
-                    <td><?= htmlspecialchars($donnee['name'], ENT_QUOTES) ?></td>
+                    <td><?= htmlspecialchars($donnee['date1'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
+                    <td><?= htmlspecialchars($donnee['name'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
                     <td>
-                      <input type="hidden" name="user_id" value="<?= htmlspecialchars($donnee['user_id'], ENT_QUOTES) ?>"> 
-                      <button type="submit" name="submit" class="delete_button bg-transparent border border-0"><img src="images/delete_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="delete_icon"></button>
+                      <?php $src = 'images/uploads/' . ($donnee['filename'] ?? ''); ?>
+                      <?php if (!empty($donnee['filename'])): ?>
+                        <img src="<?= htmlspecialchars($src, ENT_QUOTES, 'UTF-8') ?>" alt="preview" style="max-height:60px" />
+                      <?php endif; ?>
+                    </td>
+                    <td>
+                      <input type="hidden" name="delete_id" value="<?= htmlspecialchars($donnee['id'] ?? '', ENT_QUOTES, 'UTF-8') ?>"> 
+                      <button type="submit" name="delete" class="delete_button bg-transparent border border-0"><img src="images/delete_32dp_000000_FILL0_wght400_GRAD0_opsz40.svg" alt="delete_icon"></button>
                     
                     </td>
                   </tr>
