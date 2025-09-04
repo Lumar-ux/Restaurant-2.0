@@ -2,14 +2,12 @@
 
 J'ai repris mon projet de site web de restaurant et l'ai amélioré en ajoutant de nouvelles fonctionnalités et en peaufinant le design.
 
-***Note : Ce projet est actuellement en phase de développement.***
 
 ## Objectifs
 
 - **Implémenter un back-office :** Permettre à l'équipe marketing et communication de gérer les messages de contact de manière centralisée.
 - **Créer un livre d'or :** Recueillir les avis des clients via un formulaire connecté à une feuille de calcul Google Sheets (ou à une base de données MySQL en alternative).
 - **Dynamiser la galerie d'images :** Permettre l'ajout et la visualisation d'images de manière dynamique, sans modifier le code HTML à chaque fois.
-- **Déployer le projet :** Mettre le site en ligne sur un hébergeur gratuit compatible avec PHP.
 
 ## Fonctionnalités implémentées
 
@@ -36,7 +34,7 @@ J'ai repris mon projet de site web de restaurant et l'ai amélioré en ajoutant 
 1. Clonez le dépôt : `git clone https://github.com/<votre_nom_utilisateur>/restaurant2.0.git`
 2. Configurez la connexion à la base de données MySQL (si vous l'utilisez) ou à l'API Google Sheets (si vous l'utilisez).
 3. Installez les dépendances avec Composer : `composer install`
-4. Lancez le serveur local (par exemple, avec PHP intégré ou XAMPP).
+4. Lancez le serveur local (par exemple, avec PHP intégré ou XAMPP ou laragon).
 
 ## Améliorations possibles
 
